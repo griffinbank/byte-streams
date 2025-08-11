@@ -1,4 +1,4 @@
-(defproject org.clj-commons/byte-streams (or (System/getenv "PROJECT_VERSION") "0.3.4")
+(defproject griffinbank/byte-streams (or (System/getenv "PROJECT_VERSION") "0.3.5-20250811")
   :description "A simple way to handle the menagerie of Java byte representations."
   :license {:name "MIT License"
             :url "http://opensource.org/licenses/MIT"}
@@ -8,8 +8,8 @@
                                     :password :env/clojars_password
                                     :sign-releases false}]]
   :dependencies [[org.clj-commons/primitive-math "1.0.0"]
-                 [manifold/manifold "0.3.0"]
-                 [potemkin "0.4.6"]]
+                 [griffinbank/manifold "0.4.4-20250811"]
+                 [griffinbank/potemkin "0.4.9-20250811"]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.11.1"]
                                   [org.clojure/test.check "1.1.1"]
                                   [rhizome "0.2.9"]

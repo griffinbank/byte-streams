@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [take])
   (:require
    [clj-commons.primitive-math :as p]
-   [clj-commons.byte-streams.utils :refer [doit definterface+ deftype+]]
+   [clj-commons.byte-streams.utils :refer [doit]]
    [manifold
     [utils :as u]
     [stream :as s]
@@ -20,7 +20,7 @@
 
 (set! *unchecked-math* true)
 
-(definterface+ PushbackStream
+(definterface PushbackStream
   (put [^bytes x ^int offset ^int length])
   (put [^java.nio.ByteBuffer buf])
   (pushback [^bytes ary ^int offset ^int length])
@@ -87,7 +87,7 @@
        body)))
 
 (both
- (deftype+ (either [PushbackByteStream] [SynchronizedPushbackByteStream])
+ (deftype (either [PushbackByteStream] [SynchronizedPushbackByteStream])
    [lock
     ^LinkedList consumers
     ^long buffer-capacity
