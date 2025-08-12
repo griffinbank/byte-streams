@@ -8,7 +8,6 @@
   (:require
    [manifold.stream :as s]
    [byte-streams
-    [utils :refer [defprotocol+ defrecord+ deftype+]]
     [protocols :as proto]]
    [clj-commons.primitive-math :as p])
   (:import
@@ -89,7 +88,7 @@
        :else
        (= a b)))))
 
-(defprotocol+ IConversionGraph
+(defprotocol IConversionGraph
   (assoc-conversion [_ src dst f cost])
   (equivalent-targets [_ dst])
   (possible-sources [_])
